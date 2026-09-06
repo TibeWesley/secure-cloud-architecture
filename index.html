@@ -1,264 +1,148 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Management System</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
+```
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f7fb;
+        margin: 0;
+        padding: 0;
+    }
 
-        body {
-            background: #f4f7fb;
-            color: #333;
-        }
+    header {
+        background-color: #2563eb;
+        color: white;
+        text-align: center;
+        padding: 25px;
+    }
 
-        header {
-            background: #2563eb;
-            color: white;
-            padding: 25px;
-            text-align: center;
-        }
+    .container {
+        width: 90%;
+        max-width: 1000px;
+        margin: 30px auto;
+    }
 
-        header h1 {
-            margin-bottom: 8px;
-        }
+    .card {
+        background-color: white;
+        padding: 25px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
 
-        .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: 30px auto;
-        }
+    button {
+        background-color: #16a34a;
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 6px;
+        cursor: pointer;
+    }
 
-        .top-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 25px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        }
+    button:hover {
+        background-color: #15803d;
+    }
 
-        .login-button {
-            background: #16a34a;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 16px;
-        }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
 
-        .login-button:hover {
-            background: #15803d;
-        }
+    th {
+        background-color: #2563eb;
+        color: white;
+    }
 
-        .student-info {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            margin-bottom: 25px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        }
+    th, td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+</style>
+```
 
-        .student-info h2 {
-            margin-bottom: 20px;
-            color: #2563eb;
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
-
-        .info-item {
-            padding: 12px;
-            background: #f8fafc;
-            border-radius: 6px;
-        }
-
-        .info-item strong {
-            display: block;
-            color: #555;
-            margin-bottom: 5px;
-        }
-
-        .records {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            overflow-x: auto;
-        }
-
-        .records h2 {
-            color: #2563eb;
-            margin-bottom: 20px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th {
-            background: #2563eb;
-            color: white;
-            padding: 14px;
-            text-align: left;
-        }
-
-        td {
-            padding: 14px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        tr:hover {
-            background: #f1f5f9;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 30px;
-            color: #666;
-        }
-
-        @media (max-width: 700px) {
-            .top-section {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>Student Management System</h1>
-        <p>Secure Cloud-Based Student Application</p>
-    </header>
+<header>
+    <h1>Student Management System</h1>
+    <p>Secure Cloud-Based Student Application</p>
+</header>
 
-    <div class="container">
+<div class="container">
 
-        <div class="top-section">
-            <div>
-                <h2>Welcome to the Student Portal</h2>
-                <p>View and manage student information.</p>
-            </div>
+```
+<div class="card">
+    <h2>Welcome</h2>
+    <p>Welcome to the Student Management System.</p>
+    <button>Login</button>
+</div>
 
-            <button class="login-button">Login</button>
-        </div>
+<div class="card">
+    <h2>Student Information</h2>
 
-        <div class="student-info">
+    <p><strong>Student Name:</strong> Juan Dela Cruz</p>
+    <p><strong>Student Number:</strong> 2026-001</p>
+    <p><strong>Course:</strong> BSIT</p>
+    <p><strong>Year Level:</strong> 2nd Year</p>
+    <p><strong>Email:</strong> juan@example.com</p>
+</div>
 
-            <h2>Student Information</h2>
+<div class="card">
+    <h2>Student Records</h2>
 
-            <div class="info-grid">
+    <table>
+        <tr>
+            <th>Student No.</th>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Year Level</th>
+            <th>Email</th>
+        </tr>
 
-                <div class="info-item">
-                    <strong>Student Name</strong>
-                    Juan Dela Cruz
-                </div>
+        <tr>
+            <td>2026-001</td>
+            <td>Juan Dela Cruz</td>
+            <td>BSIT</td>
+            <td>2nd Year</td>
+            <td>juan@example.com</td>
+        </tr>
 
-                <div class="info-item">
-                    <strong>Student Number</strong>
-                    2026-001
-                </div>
+        <tr>
+            <td>2026-002</td>
+            <td>Maria Santos</td>
+            <td>BSIT</td>
+            <td>2nd Year</td>
+            <td>maria@example.com</td>
+        </tr>
 
-                <div class="info-item">
-                    <strong>Course</strong>
-                    Bachelor of Science in Information Technology
-                </div>
+        <tr>
+            <td>2026-003</td>
+            <td>Pedro Reyes</td>
+            <td>BSCS</td>
+            <td>3rd Year</td>
+            <td>pedro@example.com</td>
+        </tr>
 
-                <div class="info-item">
-                    <strong>Year Level</strong>
-                    2nd Year
-                </div>
+        <tr>
+            <td>2026-004</td>
+            <td>Ana Garcia</td>
+            <td>BSIT</td>
+            <td>1st Year</td>
+            <td>ana@example.com</td>
+        </tr>
+    </table>
+</div>
+```
 
-                <div class="info-item">
-                    <strong>Email</strong>
-                    juan@example.com
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="records">
-
-            <h2>Sample Student Records</h2>
-
-            <table>
-
-                <thead>
-                    <tr>
-                        <th>Student No.</th>
-                        <th>Name</th>
-                        <th>Course</th>
-                        <th>Year Level</th>
-                        <th>Email</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-
-                    <tr>
-                        <td>2026-001</td>
-                        <td>Juan Dela Cruz</td>
-                        <td>BSIT</td>
-                        <td>2nd Year</td>
-                        <td>juan@example.com</td>
-                    </tr>
-
-                    <tr>
-                        <td>2026-002</td>
-                        <td>Maria Santos</td>
-                        <td>BSIT</td>
-                        <td>2nd Year</td>
-                        <td>maria@example.com</td>
-                    </tr>
-
-                    <tr>
-                        <td>2026-003</td>
-                        <td>Pedro Reyes</td>
-                        <td>BSCS</td>
-                        <td>3rd Year</td>
-                        <td>pedro@example.com</td>
-                    </tr>
-
-                    <tr>
-                        <td>2026-004</td>
-                        <td>Ana Garcia</td>
-                        <td>BSIT</td>
-                        <td>1st Year</td>
-                        <td>ana@example.com</td>
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Student Management System</p>
-    </footer>
+</div>
 
 </body>
 </html>
