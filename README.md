@@ -1,32 +1,34 @@
+````markdown
 # Secure Cloud Architecture
 
 ## Student Information
 
-Name: [Your Name]  
-Section: [Your Section]  
-Course: [Your Course]  
-Date: September 6, 2026
+**Name:** TIBE WESLEY C.  
+**Section:** CCIS7E  
+**Course:** BSIT-NETAD  
+**Date:** September 6, 2026  
 
 ## Project Description
 
 This activity demonstrates a proposed secure cloud architecture for a Student Management Application.
 
-The application allows users to view student information while applying basic cloud networking and security concepts.
+The application is designed to allow users to view student information while keeping important resources protected.
+
+The project focuses on basic cloud networking, security controls, public and private resources, and the Shared Responsibility Model.
 
 ## Architecture
 
+The proposed architecture is:
+
 Users → CDN → Load Balancer → Application Servers → Private Database
 
-The application uses two application servers to improve availability.
+### Components
 
-## Architecture Components
-
-- Users
-- CDN
-- Load Balancer
-- Application Server 1
-- Application Server 2
-- Private Database
+- **Users** – People who use the Student Management Application.
+- **CDN** – Helps deliver website content faster.
+- **Load Balancer** – Distributes user requests between application servers.
+- **Application Servers** – Process requests from users.
+- **Private Database** – Stores student information and is not directly accessible from the Internet.
 
 ## Security Controls
 
@@ -41,19 +43,22 @@ The application uses two application servers to improve availability.
 
 ## Public and Private Resources
 
-The CDN and Load Balancer are public-facing resources.
+| Resource | Type |
+|---|---|
+| CDN | Public |
+| Load Balancer | Public |
+| Application Server | Private |
+| Database | Private |
 
-The Application Servers and Database are private resources.
+## Security Approach
 
-The database is not directly accessible from the Internet.
+The system follows the Principle of Least Privilege.
 
-## Shared Responsibility Model
+Users only receive the access they need. Administrator accounts are protected with MFA, and the database is kept private.
 
-The cloud provider is responsible for the security of the underlying cloud infrastructure, including physical data centers and physical servers.
+The application also uses firewalls, encryption, logging, monitoring, and backups to improve security.
 
-The customer is responsible for security within the cloud environment, including user accounts, IAM permissions, student data, application security, database access rules, and backups.
-
-## Repository Structure
+## Repository Files
 
 ```text
 secure-cloud-architecture/
@@ -61,3 +66,13 @@ secure-cloud-architecture/
 ├── index.html
 ├── README.md
 └── security-plan.md
+````
+
+## Conclusion
+
+This project demonstrates how a simple cloud application can be designed with security in mind.
+
+The most important idea is that public resources should handle Internet traffic while sensitive resources, such as application servers and databases, should remain private.
+
+```
+```
